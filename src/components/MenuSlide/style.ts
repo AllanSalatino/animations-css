@@ -1,4 +1,5 @@
 import styled, { css, keyframes } from "styled-components";
+import { CustomAnchorProps } from ".";
 
 interface IStyledProps {
   isHamburguerMenu: boolean;
@@ -25,6 +26,16 @@ const close = keyframes`
     opacity: 0;
   }
 `;
+
+const opacity = keyframes`
+  0%{
+    right: -300px;
+  }
+  100%{
+    right: 0px;
+  }
+`;
+
 const Menu = styled.div`
   display: flex;
   flex-direction: column;
@@ -43,21 +54,30 @@ const Menu = styled.div`
       animation: ${isHamburguerMenu ? open : close} 0.3s forwards;
     `}
 
-  .carros, .motos, .leilao, .login, .cadastrar {
+  .perfumes-originais, .inspiracao, .miniaturas-originais, .victorias-secrets, .decants, .feminino, .masculino, .contato, .sobre {
     width: 80%;
     text-align: start;
     color: #aa340b;
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 500;
     text-decoration: none;
     border-bottom: 2px solid #cdcdcd;
-    padding: 20px 0px;
+    padding: 15px 0px;
     transition: 0.3s;
+
     :hover {
       color: var(--blue);
       border-bottom: 4px solid var(--blue);
     }
   }
+`;
+
+export const CustomLink = styled.a<CustomAnchorProps>`
+  position: relative;
+  ${({ animation, isHamburguerMenu }: any) =>
+    css`
+      animation: ${isHamburguerMenu && opacity} ${animation}s forwards;
+    `}
 `;
 
 export default Menu;
