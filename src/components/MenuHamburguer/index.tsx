@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { MenuSlide } from "../MenuSlide";
 import { Hamburguer } from "./style";
 
 export const MenuHamburguer = () => {
   const [isHamburguerMenu, setIsHamburguerMenu] = useState<boolean>(false);
-  const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false);
 
   const HamburgerMenuStatus = () => {
     if (isHamburguerMenu) {
@@ -13,20 +12,6 @@ export const MenuHamburguer = () => {
       setIsHamburguerMenu(true);
     }
   };
-
-  useEffect(() => {
-    let timer: any;
-    if (isHamburguerMenu) {
-      setIsOpenMenu(true);
-    } else {
-      timer = setTimeout(() => {
-        setIsOpenMenu(false);
-      }, 500);
-    }
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [isHamburguerMenu]);
 
   return (
     <>
