@@ -66,8 +66,8 @@ const Menu = styled.div`
     transition: 0.3s;
 
     :hover {
-      color: var(--blue);
-      border-bottom: 4px solid var(--blue);
+      color: green;
+      border-bottom: 2px solid green;
     }
   }
 `;

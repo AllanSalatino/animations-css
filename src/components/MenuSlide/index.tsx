@@ -75,22 +75,24 @@ export const MenuSlide = ({ isHamburguerMenu }: any) => {
   ];
   return (
     <>
-      <Menu isHamburguerMenu={isHamburguerMenu}>
-        {rotas.map((rota, index) => {
-          return (
-            <CustomLink
-              key={index}
-              href={rota.categoria?.class}
-              target="_blank"
-              className={rota.categoria?.class}
-              isHamburguerMenu={isHamburguerMenu}
-              animation={rota.categoria?.animation}
-            >
-              {rota.categoria?.name}
-            </CustomLink>
-          );
-        })}
-      </Menu>
+      {isHamburguerMenu && (
+        <Menu isHamburguerMenu={isHamburguerMenu}>
+          {rotas.map((rota, index) => {
+            return (
+              <CustomLink
+                key={index}
+                href={rota.categoria?.class}
+                target="_blank"
+                className={rota.categoria?.class}
+                isHamburguerMenu={isHamburguerMenu}
+                animation={rota.categoria?.animation}
+              >
+                {rota.categoria?.name}
+              </CustomLink>
+            );
+          })}
+        </Menu>
+      )}
     </>
   );
 };

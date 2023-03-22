@@ -60,7 +60,6 @@ const GlobalStyle = createGlobalStyle`
         justify-content: space-between;
         align-items: center;
         height: 100vh;
-        width: 100vw;
     }
 
     button{

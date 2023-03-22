@@ -12,7 +12,6 @@ const opacity = keyframes`
   }
 `;
 export const MainTag = styled.main`
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,7 +24,7 @@ export const MainTag = styled.main`
   animation: ${opacity} 1s forwards;
 `;
 
-export const Background = styled.main`
+export const Background = styled.div`
   position: absolute;
   display: flex;
   justify-content: center;
